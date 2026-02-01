@@ -14,6 +14,11 @@ const config: Config = {
       },
       colors: {
         charcoal: '#1a1a1a',
+        gold: {
+          DEFAULT: '#D4AF37',
+          light: '#E5C158',
+          dark: '#B8941F',
+        },
       },
     },
   },
