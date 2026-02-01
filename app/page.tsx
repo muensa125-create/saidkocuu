@@ -1,6 +1,6 @@
 'use client'
 
-import { ExternalLink, Users, Brain, Youtube, BookOpen, Sparkles } from 'lucide-react'
+import { ExternalLink, Users, Brain, Youtube, BookOpen, Sparkles, Heart } from 'lucide-react'
 import Image from 'next/image'
 import React, { useEffect, useRef, useState } from 'react'
 import ContactForm from './components/ContactForm'
@@ -109,6 +109,7 @@ export default function Home() {
               <a href="#about" className="text-white/70 hover:text-white text-sm transition-colors">Hakkımda</a>
               <a href="#projects" className="text-white/70 hover:text-white text-sm transition-colors">Projeler</a>
               <a href="#articles" className="text-white/70 hover:text-white text-sm transition-colors">Yazılar</a>
+              <a href="#kg" className="text-white/70 hover:text-white text-sm transition-colors">K-G</a>
               <a href="#contact" className="text-white/70 hover:text-white text-sm transition-colors">İletişim</a>
             </div>
           </div>
@@ -215,6 +216,66 @@ export default function Home() {
                 </a>
               )
             })}
+          </div>
+        </section>
+
+        {/* Kişilik ve Gelişim Envanterleri */}
+        <section id="kg" className="mb-16 sm:mb-20 md:mb-24 lg:mb-32 scroll-animate animate-delay-350">
+          <h2 className="mb-8 font-serif text-2xl font-normal leading-tight text-gold sm:text-3xl sm:mb-10 md:text-4xl md:mb-12">
+            Kişilik ve Gelişim Envanterleri
+          </h2>
+          
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            {/* Sevgilinizle Uyumunuz Testi */}
+            <a
+              href="/sevgilinizle-uyumunuz-ne-kadar"
+              className="group block border border-white/10 rounded-lg p-6 bg-white/5 backdrop-blur-sm card-hover hover:border-white/20 transition-all duration-300"
+            >
+              <div className="mb-4 flex justify-center">
+                <div className="p-3 rounded-full bg-white/5 group-hover:bg-white/10 transition-colors">
+                  <Heart className="h-8 w-8 text-gold" />
+                </div>
+              </div>
+              <h3 className="mb-3 font-serif text-lg font-normal text-white text-center group-hover:text-gold transition-colors">
+                Sevgilinizle Uyumunuz Ne Kadar?
+              </h3>
+              <p className="text-sm text-white/70 text-center group-hover:text-white/80 transition-colors">
+                Kişilik testi ile ilişkinizin uyum skorunu öğrenin
+              </p>
+            </a>
+
+            {/* Gelecek Testleri İçin Boş Kartlar */}
+            <div className="border border-white/5 rounded-lg p-6 bg-white/2 opacity-50">
+              <div className="mb-4 flex justify-center">
+                <div className="p-3 rounded-full bg-white/5">
+                  <div className="h-8 w-8 text-white/30 flex items-center justify-center">
+                    <span className="text-2xl">?</span>
+                  </div>
+                </div>
+              </div>
+              <h3 className="mb-3 font-serif text-lg font-normal text-white/50 text-center">
+                Yakında
+              </h3>
+              <p className="text-sm text-white/30 text-center">
+                Yeni testler ekleniyor
+              </p>
+            </div>
+
+            <div className="border border-white/5 rounded-lg p-6 bg-white/2 opacity-50">
+              <div className="mb-4 flex justify-center">
+                <div className="p-3 rounded-full bg-white/5">
+                  <div className="h-8 w-8 text-white/30 flex items-center justify-center">
+                    <span className="text-2xl">?</span>
+                  </div>
+                </div>
+              </div>
+              <h3 className="mb-3 font-serif text-lg font-normal text-white/50 text-center">
+                Yakında
+              </h3>
+              <p className="text-sm text-white/30 text-center">
+                Yeni testler ekleniyor
+              </p>
+            </div>
           </div>
         </section>
 

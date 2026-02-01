@@ -195,4 +195,60 @@
   .hover\:text-white:hover {
     color: #E5E5E5;
   }
+
+  /* Custom Cursor Styles */
+  .custom-cursor {
+    position: fixed;
+    width: 20px;
+    height: 20px;
+    pointer-events: none;
+    z-index: 9999;
+    transition: transform 0.1s ease-out;
+  }
+
+  .cursor-heart {
+    width: 100%;
+    height: 100%;
+    background: #D4AF37;
+    clip-path: path('M12,21.35L10.55,20.03C5.4,15.36 2,12.27 2,8.5C2,5.41 4.42,3 7.5,3C9.24,3 10.91,3.81 12,5.08C13.09,3.81 14.76,3 16.5,3C19.58,3 22,5.41 22,8.5C22,12.27 18.6,15.36 13.45,20.03L12,21.35Z');
+    transform: scale(0.75);
+    filter: drop-shadow(0 0 8px rgba(212, 175, 55, 0.6));
+    animation: cursorPulse 2s ease-in-out infinite;
+  }
+
+  .cursor-dot {
+    position: fixed;
+    width: 4px;
+    height: 4px;
+    background: #D4AF37;
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 9998;
+    transform: translate(-50%, -50%);
+  }
+
+  @keyframes cursorPulse {
+    0%, 100% {
+      transform: scale(0.75);
+      opacity: 0.8;
+    }
+    50% {
+      transform: scale(0.9);
+      opacity: 1;
+    }
+  }
+
+  /* Interactive cursor states */
+  .cursor-hover {
+    transform: scale(1.2);
+  }
+
+  .cursor-click {
+    transform: scale(0.5);
+  }
+
+  .cursor-centering {
+    transform: scale(0.1);
+    transition: transform 2s ease-in-out;
+  }
 }
