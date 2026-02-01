@@ -39,8 +39,8 @@ export async function POST(request: Request) {
 
     // Email gönder
     const { data, error } = await resend.emails.send({
-      from: 'Said Koçu Web Sitesi <onboarding@resend.dev>', // Resend'de domain doğrulaması yapınca değiştirilebilir
-      to: 'saidkocun@gmail.com',
+      from: 'onboarding@resend.dev',
+      to: 'muensa125@gmail.com',
       replyTo: email,
       subject: `İletişim Formu: ${name} - ${email}`,
       html: `
@@ -73,11 +73,28 @@ Bu mesaj saidkocu.com web sitesindeki iletişim formundan gönderilmiştir.
 
     if (error) {
       console.error('Resend error:', error)
+      // Resend hatasını daha detaylı logla
+      if (error.message) {
+        console.error('Resend error message:', error.message)
+      }
+      return NextResponse.json(
+        { 
+          error: 'Email gönderilirken bir hata oluştu. Lütfen tekrar deneyin.',
+          details: process.env.NODE_ENV === 'development' ? error.message : undefined
+        },
+        { status: 500 }
+      )
+    }
+
+    if (!data || !data.id) {
+      console.error('Resend returned no data or email ID')
       return NextResponse.json(
         { error: 'Email gönderilirken bir hata oluştu. Lütfen tekrar deneyin.' },
         { status: 500 }
       )
     }
+
+    console.log('Email sent successfully:', data.id)
 
     return NextResponse.json(
       { 
@@ -88,8 +105,12 @@ Bu mesaj saidkocu.com web sitesindeki iletişim formundan gönderilmiştir.
     )
   } catch (error) {
     console.error('Contact form error:', error)
+    const errorMessage = error instanceof Error ? error.message : 'Bilinmeyen bir hata oluştu'
     return NextResponse.json(
-      { error: 'Bir hata oluştu. Lütfen tekrar deneyin.' },
+      { 
+        error: 'Bir hata oluştu. Lütfen tekrar deneyin.',
+        details: process.env.NODE_ENV === 'development' ? errorMessage : undefined
+      },
       { status: 500 }
     )
   }
