@@ -55,6 +55,56 @@ const questions = [
   "Esneklik benim için güçlü bir özelliktir."
 ]
 
+const partnerQuestions = [
+  // E/I (Extraversion/Introversion)
+  "Kalabalık ortamlarda enerjisinin arttığını hisseder.",
+  "Yeni insanlarla tanışmaktan keyif alır.",
+  "Sosyal etkinliklerden sonra kendini yorgun hisseder.",
+  "Derin sohbetlerden çok, genel sohbetleri tercih eder.",
+  "Düşüncelerini yüksek sesle düşünmeyi sever.",
+  "Yalnız zaman geçirmekten çok, başkalarıyla vakit geçirmeyi tercih eder.",
+  "Parti veya etkinliklerde merkezde olmaktan hoşlanır.",
+  "İlk konuşmayı başlatan taraf genelde odur.",
+  "Grup çalışmalarında daha verimli çalışır.",
+  "Yeni yerlere gitmek onu heyecanlandırır.",
+  
+  // S/N (Sensing/Intuition)
+  "Somut detaylara odaklanır, soyut fikirlerden çok.",
+  "Gelecekteki olasılıkları hayal etmekten hoşlanır.",
+  "Pratik ve gerçekçi çözümleri tercih eder.",
+  "Metafor ve sembollerle düşünmekten keyif alır.",
+  "Deneyimlerine dayanarak öğrenir.",
+  "Büyük resmi görmek, detaylara takılı kalmamak onun için önemlidir.",
+  "Geleneksel yöntemler yerine yenilikçi yaklaşımları tercih eder.",
+  "Kuramsal konuları tartışmaktan hoşlanır.",
+  "Şimdiki zamanın somut gerçeklerine odaklanır.",
+  "İçgüdülerine güvenerek karar verir.",
+  
+  // T/F (Thinking/Feeling)
+  "Karar verirken mantığını duygularına tercih eder.",
+  "Başkalarının duygularını önemsemek onun için önceliktir.",
+  "Adalet ve nesnellik onun için önemlidir.",
+  "Empati kurmak onun doğal yeteneğidir.",
+  "Çatışma durumlarında mantıklı çözümler arar.",
+  "Başkalarını motive etmek onu mutlu eder.",
+  "Eleştiriyi kişisel algılamaz.",
+  "İlişkilerde duygusal bağ onun için önemlidir.",
+  "Analitik düşünmeyi sever.",
+  "Başkalarının ihtiyaçlarını kendi ihtiyaçlarından önce koyabilir.",
+  
+  // J/P (Judging/Perceiving)
+  "Planlı ve organize yaşamayı tercih eder.",
+  "Anlık fırsatlara açık, esnek olmayı sever.",
+  "Son tarihler (deadline) onu motive eder.",
+  "Plansızlık onu rahatsız eder.",
+  "Birden fazla projeyi aynı anda yürütebilir.",
+  "Karar vermeden önce tüm seçenekleri değerlendirmek ister.",
+  "Düzen ve yapı onun için önemlidir.",
+  "Spontane değişikliklere açıktır.",
+  "İşleri tamamlamadan önce yeni başlangıçlar yapmaz.",
+  "Esneklik onun için güçlü bir özelliktir."
+]
+
 const reversedQuestions = [3, 4, 13, 19, 27, 34, 39] // Ters puanlanacak soruların indeksleri
 
 const personalityTypes = [
@@ -266,7 +316,7 @@ export default function SevgiliUyumuTesti() {
               <div className="mb-6 flex items-center gap-3">
                 <Users className="h-5 w-5 text-gold" />
                 <h2 className="font-serif text-xl font-normal text-white">
-                  {questions[currentQuestion]}
+                  {(currentStep === 'partner' ? partnerQuestions : questions)[currentQuestion]}
                 </h2>
               </div>
               <div className="space-y-3">

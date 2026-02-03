@@ -97,7 +97,7 @@ export default function Home() {
 
 
   return (
-    <main className="min-h-screen bg-black relative overflow-hidden">
+    <main className="min-h-screen bg-black relative overflow-hidden home-gold-cursor">
       {/* Navigation Menu */}
       <nav className="fixed top-0 left-0 right-0 z-50 bg-black/80 backdrop-blur-sm border-b border-white/10">
         <div className="mx-auto max-w-4xl px-4 sm:px-6 md:px-12">
@@ -109,7 +109,6 @@ export default function Home() {
               <a href="#about" className="text-white/70 hover:text-white text-sm transition-colors">Hakkımda</a>
               <a href="#projects" className="text-white/70 hover:text-white text-sm transition-colors">Projeler</a>
               <a href="#articles" className="text-white/70 hover:text-white text-sm transition-colors">Yazılar</a>
-              <a href="#kg" className="text-white/70 hover:text-white text-sm transition-colors">K-G</a>
               <a href="#contact" className="text-white/70 hover:text-white text-sm transition-colors">İletişim</a>
             </div>
           </div>
@@ -244,22 +243,22 @@ export default function Home() {
               </p>
             </a>
 
-            {/* Gelecek Testleri İçin Boş Kartlar */}
-            <div className="border border-white/5 rounded-lg p-6 bg-white/2 opacity-50">
+            <a
+              href="/hayatin-anlami-nedir"
+              className="group block border border-white/10 rounded-lg p-6 bg-white/5 backdrop-blur-sm card-hover hover:border-white/20 transition-all duration-300"
+            >
               <div className="mb-4 flex justify-center">
-                <div className="p-3 rounded-full bg-white/5">
-                  <div className="h-8 w-8 text-white/30 flex items-center justify-center">
-                    <span className="text-2xl">?</span>
-                  </div>
+                <div className="p-3 rounded-full bg-white/5 group-hover:bg-white/10 transition-colors">
+                  <BookOpen className="h-8 w-8 text-gold" />
                 </div>
               </div>
-              <h3 className="mb-3 font-serif text-lg font-normal text-white/50 text-center">
-                Yakında
+              <h3 className="mb-3 font-serif text-lg font-normal text-white text-center group-hover:text-gold transition-colors">
+                Hayatın Anlamı Nedir?
               </h3>
-              <p className="text-sm text-white/30 text-center">
-                Yeni testler ekleniyor
+              <p className="text-sm text-white/70 text-center group-hover:text-white/80 transition-colors">
+                Anlam, aşk, para ve inanç üzerine bir yazı serisi
               </p>
-            </div>
+            </a>
 
             <div className="border border-white/5 rounded-lg p-6 bg-white/2 opacity-50">
               <div className="mb-4 flex justify-center">

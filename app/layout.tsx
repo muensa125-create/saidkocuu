@@ -18,11 +18,32 @@ const playfair = Playfair_Display({
 })
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://saidkocu.com'),
   title: 'Said Koçu',
   description: 'Psikoloji kuramlarını teknoloji ve yapay zeka ile harmanlayan girişimci',
+  alternates: {
+    canonical: '/',
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
+  authors: [{ name: 'Said Koçu', url: 'https://saidkocu.com' }],
+  creator: 'Said Koçu',
+  publisher: 'Said Koçu',
   openGraph: {
     title: 'Said Koçu | Gelişim ve Teknoloji',
     description: 'Psikoloji kuramlarını teknoloji ve yapay zeka ile harmanlayan girişimci',
+    url: '/',
+    siteName: 'Said Koçu',
+    locale: 'tr_TR',
     images: [
       {
         url: '/api/og?title=Said Koçu | Gelişim ve Teknoloji',
